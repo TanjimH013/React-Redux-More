@@ -70,15 +70,23 @@ function Header() {
 }
 
 function Menu() {
+  const pizzas = pizzaData;
+  // const pizzas = [];
+  const numPizzas = pizzas.length;
+
   return (
     <main className="menu">
       <h2>Ore menu</h2>
 
-      <ul className="pizzas">
-        {pizzaData.map((pizza) => (
-          <Pizza pizzaObj={pizza} key={pizza.name} />
-        ))}
-      </ul>
+      {numPizzas > 0 ? (
+        <ul className="pizzas">
+          {pizzaData.map((pizza) => (
+            <Pizza pizzaObj={pizza} key={pizza.name} />
+          ))}
+        </ul>
+      ) : (
+        <p>We're still working on our menu. Please come back later 🙂</p>
+      )}
 
       {/* <Pizza
         name="Pizza Spinaci"
@@ -126,7 +134,6 @@ function Footer() {
           <button className="btn">Order</button>
         </div>
       )}
-
       {/* {new Date().toLocaleTimeString()}. We're Currently Open! */}
     </footer>
   );
