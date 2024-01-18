@@ -52,9 +52,7 @@ export default function Navbar(props) {
           </div>
         </div>
       </nav>
-      <div>
-        <h1>Thi is TextUtils</h1>
-      </div>
+      <div></div>
     </>
   );
 }
