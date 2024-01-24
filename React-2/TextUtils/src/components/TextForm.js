@@ -7,16 +7,26 @@ export default function TextForm(props) {
 
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to uppercase!", "success");
   };
 
   const handleLowClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to lowercase!", "success");
+  };
+
+  const handleCopy = () => {
+    let text = document.getElementById("myBox");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+    props.showAlert("Copy to clipboard", "success");
   };
 
   const handleClear = () => {
     let newText = " ";
     setText(newText);
+    props.showAlert("Text Form Cleaned!", "success");
   };
 
   const handleOnChange = (event) => {
@@ -49,10 +59,13 @@ export default function TextForm(props) {
           Convert upper
         </button>
 
-        <button className="btn btn-success mx-1" onClick={handleLowClick}>
+        <button className="btn btn-primary mx-1" onClick={handleLowClick}>
           Convert lower
         </button>
-        <button className="btn btn-danger" onClick={handleClear}>
+        <button className="btn btn-success mx-1" onClick={handleCopy}>
+          Copy
+        </button>
+        <button className="btn btn-danger mx-1" onClick={handleClear}>
           Clear
         </button>
       </div>
