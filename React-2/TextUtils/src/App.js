@@ -60,7 +60,7 @@ export default function App() {
                   showAlert={showAlert}
                 />
               }
-            ></Route>
+            />
 
             <Route
               path="/"
@@ -72,7 +72,7 @@ export default function App() {
                   showAlert={showAlert}
                 />
               }
-            ></Route>
+            />
           </Routes>
         </div>
       </Router>
