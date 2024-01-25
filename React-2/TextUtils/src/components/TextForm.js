@@ -26,7 +26,7 @@ export default function TextForm(props) {
   const handleClear = () => {
     let newText = " ";
     setText(newText);
-    props.showAlert("Text Form Cleaned!", "success");
+    props.showAlert("Text Form Cleaned!", "succes s");
   };
 
   const handleOnChange = (event) => {
