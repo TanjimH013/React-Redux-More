@@ -26,7 +26,7 @@ export default function TextForm(props) {
   const handleClear = () => {
     let newText = " ";
     setText(newText);
-    props.showAlert("Text Form Cleaned!", "succes s");
+    props.showAlert("Text Form Cleaned!", "success");
   };
 
   const handleOnChange = (event) => {
@@ -50,22 +50,22 @@ export default function TextForm(props) {
             id="myBox"
             rows="8"
             style={{
-              backgroundColor: props.mode === "dark" ? "gray" : "white",
+              backgroundColor: props.mode === "dark" ? "#495057" : "white",
               color: props.mode === "dark" ? "white" : "black",
             }}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-lg-1" onClick={handleUpClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
           Convert upper
         </button>
 
-        <button className="btn btn-primary mx-1" onClick={handleLowClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>
           Convert lower
         </button>
-        <button className="btn btn-success mx-1" onClick={handleCopy}>
+        <button className="btn btn-success mx-1 my-1" onClick={handleCopy}>
           Copy
         </button>
-        <button className="btn btn-danger mx-1" onClick={handleClear}>
+        <button className="btn btn-danger mx-1 my-1" onClick={handleClear}>
           Clear
         </button>
       </div>
@@ -73,11 +73,22 @@ export default function TextForm(props) {
         className="container my-3"
         style={{ color: props.mode === "dark" ? "white" : "black" }}
       >
-        <h1>Your text summary</h1>
+        <h2>Your text summary</h2>
         <p>
-          {text.split("").length} words and {text.length} characters
+          {
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length
+          }{" "}
+          words and {text.length} characters
         </p>
-        <p>{0.008 * text.split("").length} Minutes to read</p>
+        <p>
+          {0.008 *
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length}{" "}
+          Minutes to read
+        </p>
         <h2>Preview</h2>
         <p>{text.length > 0 ? text : "Enter something to preview it"}</p>
       </div>

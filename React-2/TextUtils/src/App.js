@@ -22,7 +22,7 @@ export default function App() {
     if (mode === "light") {
       setMode("dark");
 
-      document.body.style.backgroundColor = "gray";
+      document.body.style.backgroundColor = "#343a40";
 
       showAlert("Dark mode has been enabled", "success");
     } else {
