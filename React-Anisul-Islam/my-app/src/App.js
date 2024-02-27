@@ -8,11 +8,16 @@ import Form from "./Components/Form";
 
 import Form2 from "./Components/Form2";
 
-import StateLifting from "./Components/State_lifting/State_lifting";
+import StateLifting from "./Components/State_lifting/StateLifting";
 
-import Child from "./Child";
+import Todo from "./Components/TodoApp/Todo";
+
+import NewTodo from "./Components/TodoApp/NewTodo";
 
 export default function App() {
+  const handleNewTodo = (newTodo) => {
+    console.log(newTodo);
+  };
   return (
     <div>
       <EventBubblingStopPropagation />
@@ -20,7 +25,8 @@ export default function App() {
       <Form />
       <Form2 />
       <StateLifting />
-      <Child />
+      <Todo title="Learn form React.js (Parent To Child Data passing)" />
+      <NewTodo onHandleNewTod={handleNewTodo} />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import React from "react";
 export default function EventBubblingStopPropagation() {
   const handleParentClick = (event) => {
     console.log("Parent fired: ", event);
