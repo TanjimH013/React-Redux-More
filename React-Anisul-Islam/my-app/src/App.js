@@ -15,8 +15,8 @@ import Todo from "./Components/TodoApp/Todo";
 import NewTodo from "./Components/TodoApp/NewTodo";
 
 export default function App() {
-  const handleNewTodo = (newTodo) => {
-    console.log(newTodo);
+  const handleNewTodo = (handleTodoNew) => {
+    console.log(handleTodoNew);
   };
   return (
     <div>
