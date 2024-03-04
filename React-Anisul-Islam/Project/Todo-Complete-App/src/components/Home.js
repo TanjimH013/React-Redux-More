@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <div className={style.container}>
-      <h1 style={{ color: "white" }}>Home</h1>
+      <h1 style={{ color: "white" }}>👴 Home 👵</h1>
 
       <NewTodo onAddTodo={handleAddTod} />
 

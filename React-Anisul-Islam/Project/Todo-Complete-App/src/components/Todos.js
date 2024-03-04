@@ -7,7 +7,7 @@ const Todos = (props) => {
   console.log(props.todos);
   return (
     <section className={style.todos}>
-      <h2>Todos</h2>
+      <h2>👨 Todos 👩</h2>
 
       {props.todos.map((todo) => (
         <Todo2nd

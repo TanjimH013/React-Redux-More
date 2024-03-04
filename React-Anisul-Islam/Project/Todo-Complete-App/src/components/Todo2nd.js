@@ -12,7 +12,7 @@ const Todo2nd = (props) => {
   };
   return (
     <article className={style.todo2nd}>
-      <h2>Todo2nd</h2>
+      <h2>👦 Todo2nd 👧</h2>
       <div>
         <h3>{title}</h3>
         <p>{desc}</p>
@@ -23,7 +23,7 @@ const Todo2nd = (props) => {
               handleClick(id);
             }}
           >
-            <i className="fa fa-trash fa-2x">Delete</i>
+            <i className="fa fa-trash fa-2x"> Delete </i>
           </button>
         </div>
       </div>
