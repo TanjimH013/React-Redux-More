@@ -1,4 +1,5 @@
 import { useFormik } from "formik";
+import * as yup from "yup";
 
 const SignUp = () => {
   const formik = useFormik({
@@ -9,11 +10,39 @@ const SignUp = () => {
       password: "",
       passwordC: "",
     },
+    validationSchema: yup.object({
+      fname: yup.string().min(2, "Atlest 2 characters").required(),
+      lname: yup.string().min(2, "Atlest 2 characters").required(),
+      email: yup.string().email().required(),
+      password: yup
+        .string()
+        .min(6, "Password must have atleast 6 characters")
+        .required(),
+      passwordC: yup.string().min(6, "enter your confirm password").required(),
+    }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      resetForm({ values });
+      resetForm({ values: "" });
     },
   });
+
+  const renderFnameErr = formik.touched.fname && formik.errors.fname && (
+    <span>{formik.errors.fname}</span>
+  );
+
+  const renderLnameErr = formik.touched.lname && formik.errors.lname && (
+    <span>{formik.errors.lname}</span>
+  );
+
+  const renderEmailErr = formik.touched.email && formik.errors.email && (
+    <span>{formik.errors.email}</span>
+  );
+
+  const renderPasswordErr = formik.touched.password &&
+    formik.errors.password && <span>{formik.errors.password}</span>;
+
+  const renderPasswordcErr = formik.touched.passwordC &&
+    formik.errors.passwordC && <span>{formik.errors.passwordC}</span>;
 
   return (
     <div>
@@ -30,7 +59,10 @@ const SignUp = () => {
               value={formik.values.fname}
               required
             />
+            <br />
+            {renderFnameErr}
           </div>
+
           <div>
             <label htmlFor="name">Last Name : </label>
             <input
@@ -41,7 +73,10 @@ const SignUp = () => {
               value={formik.values.lname}
               required
             />
+            <br />
+            {renderLnameErr}
           </div>
+
           <div>
             <label htmlFor="email">Email : </label>
             <input
@@ -52,6 +87,8 @@ const SignUp = () => {
               value={formik.values.email}
               required
             />
+            <br />
+            {renderEmailErr}
           </div>
           <div>
             <label htmlFor="password">Password : </label>
@@ -63,9 +100,12 @@ const SignUp = () => {
               value={formik.values.password}
               required
             />
+            <br />
+            {renderPasswordErr}
           </div>
+
           <div>
-            <label htmlFor="passwordc">Confirm Password : </label>
+            <label htmlFor="password">Confirm Password : </label>
             <input
               type="text"
               name="passwordC"
@@ -74,7 +114,10 @@ const SignUp = () => {
               value={formik.values.passwordC}
               required
             />
+            <br />
+            {renderPasswordcErr}
           </div>
+
           <div>
             <button type="submit">Sign Up</button>
           </div>
