@@ -13,6 +13,7 @@ import StateLifting from "./Components/State_lifting/StateLifting";
 import Todo from "./Components/TodoApp/Todo";
 
 import NewTodo from "./Components/TodoApp/NewTodo";
+import DataFetch from "./Components/Data-Fetch";
 
 export default function App() {
   const handleNewTodo = (handleTodoNew) => {
@@ -27,6 +28,7 @@ export default function App() {
       <StateLifting />
       <Todo title="Learn form React.js (Parent To Child Data passing)" />
       <NewTodo onHandleNewTod={handleNewTodo} />
+      <DataFetch />
     </div>
   );
 }
