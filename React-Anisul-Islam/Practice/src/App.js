@@ -13,14 +13,19 @@ import StateLifting from "./Components/State_lifting/StateLifting";
 import Todo from "./Components/TodoApp/Todo";
 
 import NewTodo from "./Components/TodoApp/NewTodo";
+
 import DataFetch from "./Components/Data-Fetch";
 
+import DynamicStyling from "./Components/Dynamic-Styling/DynamicStyling";
+
+import "./App.css";
 export default function App() {
   const handleNewTodo = (handleTodoNew) => {
     console.log(handleTodoNew);
   };
   return (
-    <div>
+    <div className="App">
+      <DynamicStyling />
       <EventBubblingStopPropagation />
       <CountApp />
       <Form />
