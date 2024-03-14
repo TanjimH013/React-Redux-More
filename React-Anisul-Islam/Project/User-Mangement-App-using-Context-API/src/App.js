@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
+import React, { useState } from "react";
+import Users from "./components/Users";
+
+const App = () => {
+  const [users, setUsers] = useState([
+    { id: 1, username: "Pabel" },
+    { id: 2, username: "Shajib" },
+    { id: 3, username: "Rayhan" },
+  ]);
+
+  const handleDeleteUser = (id) => {
+    console.log(id);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Users users={users} handleDeleteUser={handleDeleteUser} />
     </div>
   );
-}
+};
 
 export default App;
