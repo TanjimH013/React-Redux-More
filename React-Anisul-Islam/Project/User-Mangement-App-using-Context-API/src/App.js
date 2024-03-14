@@ -11,7 +11,8 @@ const App = () => {
   ]);
 
   const handleDeleteUser = (id) => {
-    console.log(id);
+    const filteredUsers = users.filter((user) => user.id !== id);
+    setUsers(filteredUsers);
   };
   return (
     <div>
