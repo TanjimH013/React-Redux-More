@@ -8,8 +8,8 @@ const User = ({ user, handleDeleteUser }) => {
   };
   return (
     <article className="user">
-      <h2>{id}</h2>
-      <p>{username}</p>
+      <h3>{id}</h3>
+      <h1>{username}</h1>
       <button
         onClick={() => {
           handleDelete(id);
