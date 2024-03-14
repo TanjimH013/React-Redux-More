@@ -6,22 +6,18 @@ import Users from "./components/Users";
 
 import NewUser from "./components/NewUser";
 
+import { UsersContext } from "./context/UsersContext";
+
 const App = () => {
   const [users, setUsers] = useState([]);
 
-  const handleDeleteUser = (id) => {
-    const filteredUsers = users.filter((user) => user.id !== id);
-    setUsers(filteredUsers);
-  };
-
-  const handleAddNewUser = (newUser) => {
-    setUsers((prevUser) => [...prevUser, newUser]);
-  };
   return (
-    <div className="App">
-      <NewUser handleAddNewUser={handleAddNewUser} />
-      <Users users={users} handleDeleteUser={handleDeleteUser} />
-    </div>
+    <UsersContext.Provider value={{ users, setUsers }}>
+      <div className="App">
+        <NewUser />
+        <Users />
+      </div>
+    </UsersContext.Provider>
   );
 };
 
