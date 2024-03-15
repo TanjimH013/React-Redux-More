@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
-
-import { UsersContext } from "../context/UsersContext";
+import React, { useState } from "react";
+import { useUserContext } from "../Hooks/useUsersContext";
 
 const NewUser = () => {
-  const { setUsers } = useContext(UsersContext);
+  const { setUsers } = useUserContext();
+
   const [username, setUserName] = useState("");
 
   const handleChange = (e) => {

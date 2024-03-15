@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import User from "./User";
 
-import { UsersContext } from "../context/UsersContext";
+import { useUserContext } from "../Hooks/useUsersContext";
 
 const Users = () => {
-  const { users } = useContext(UsersContext);
+  const { users } = useUserContext();
   return (
     <section className="users">
       {users.map((user) => (
