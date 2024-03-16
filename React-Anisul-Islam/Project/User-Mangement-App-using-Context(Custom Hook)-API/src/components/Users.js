@@ -5,10 +5,10 @@ import User from "./User";
 import { useUserContext } from "../Hooks/useUsersContext";
 
 const Users = () => {
-  const { users } = useUserContext();
+  const { state } = useUserContext();
   return (
     <section className="users">
-      {users.map((user) => (
+      {state.users.map((user) => (
         <User key={user.id} user={user} />
       ))}
     </section>
