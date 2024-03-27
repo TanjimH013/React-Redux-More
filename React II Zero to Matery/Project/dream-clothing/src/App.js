@@ -1,6 +1,5 @@
 import React from "react";
-
-import "./categories.style.scss";
+import Directory from "./components/directory/directory";
 
 const App = () => {
   const categories = [
@@ -20,19 +19,8 @@ const App = () => {
   ];
 
   return (
-    <div className="categories-container">
-      {categories.map(({ title, id, imageUrl }) => (
-        <div key={id} className="category-container">
-          <div
-            className="background-image"
-            style={{ backgroundImage: `url(${imageUrl})` }}
-          />
-          <div className="category-body-container">
-            <h1>{title}</h1>
-            <p>Shope Now</p>
-          </div>
-        </div>
-      ))}
+    <div>
+      <Directory categories={categories} />
     </div>
   );
 };
