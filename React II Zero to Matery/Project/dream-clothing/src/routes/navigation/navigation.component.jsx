@@ -6,7 +6,7 @@ import "./navigation.styles.scss";
 
 const Navigation = () => {
   return (
-    <>
+    <div>
       <div className="navigation">
         <Link className="logo-container" to="/">
           <DrmLogo className="logo" />
@@ -26,7 +26,7 @@ const Navigation = () => {
         </div>
       </div>
       <Outlet />
-    </>
+    </div>
   );
 };
 
