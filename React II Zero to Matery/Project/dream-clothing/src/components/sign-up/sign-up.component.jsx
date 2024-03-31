@@ -7,6 +7,10 @@ import {
 
 import FormInput from "../form-input/form-input";
 
+import "./sign-up.style.scss";
+
+import Button from "../button/button.component";
+
 const defaultFormFields = {
   displayName: "",
   email: "",
@@ -55,7 +59,7 @@ const SignUp = () => {
     }
   };
   return (
-    <>
+    <div className="sign-up-container">
       <h1>Sign up with your email and password </h1>
       <form onSubmit={handleSubmit}>
         <FormInput
@@ -94,9 +98,9 @@ const SignUp = () => {
           onChange={handleChange}
         />
 
-        <button type="submit">Submit</button>
+        <Button type="submit">Submit</Button>
       </form>
-    </>
+    </div>
   );
 };
 
