@@ -2,6 +2,10 @@ import { UserContext } from "../../context/user.context";
 
 import { Outlet, Link } from "react-router-dom";
 
+import CartIcon from "../../components/cart-icon/cart-icon.component";
+
+import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
+
 import { ReactComponent as DrmLogo } from "../../assets/logo.svg";
 
 import { useContext } from "react";
@@ -9,8 +13,11 @@ import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 import "./navigation.styles.scss";
 
+import { CartContext } from "../../context/cart.context";
+
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
+  const { isCartOpen } = useContext(CartContext);
 
   return (
     <div>
@@ -35,7 +42,10 @@ const Navigation = () => {
               SIGN IN
             </Link>
           )}
+
+          <CartIcon />
         </div>
+        {isCartOpen && <CartDropdown />}
       </div>
       <Outlet />
     </div>
